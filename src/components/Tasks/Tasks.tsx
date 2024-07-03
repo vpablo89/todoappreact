@@ -15,12 +15,12 @@ export const Tasks: React.FC<Props> = ({ tasks, onRemoveTask, onToggleCompleteTa
     return (
         <table className="todo-list">
             <tr>
-                <td>Id</td>
-                <td>Título</td>
-                <td>Descripción</td>
-                <td>Fecha de creación</td>
-                <td>Fecha estimada de finalización</td>
-                <td>Estado de la tarea</td>
+                <td className="">Id</td>
+                <td className="">Título</td>
+                <td className="">Descripción</td>
+                <td className="">Fecha de creación</td>
+                <td className="">Fecha estimada de finalización</td>
+                <td className="">Estado de la tarea</td>
             </tr>
             {tasks.map(task=>(
                 <li key={task.id} className={`${task.completed? 'completed': ''}`}>

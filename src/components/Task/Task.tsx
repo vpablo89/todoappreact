@@ -19,7 +19,7 @@ export const Task: React.FC<Props> = ({id, title, description, createdDate, eta,
 
 
     return(
-        <tr>
+        <tr className='todo-list'>
             <td>
                 <input
                     className="toggle"
