@@ -13,11 +13,9 @@ export const CreateTask: React.FC<Props> =({saveTask})=>{
 const [inputTitleValue, setInputTitleValue] = useState('')
 const [inputDescriptionValue, setInputDescriptionValue] = useState('Descripción de la tarea')
 const [inputCreatedDAte, setInputCreatedDate] = useState(new Date(Date.now()))
-const [inputEtaValue, setInputEtaValue] = useState('')
-const [inputCompleteValue, setInputCompletedValue] = useState(false)
-const [inputTaskStatusValue, setInputTaskStatusValue] = useState(taskStatus.ON_TIME)
 
-const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void=> {
+
+const handleKeyDown = (event: React.KeyboardEventHandler<HTMLInputElement>): void=> {
     event.preventDefault()
     saveTask({
         id: 0,
@@ -33,7 +31,8 @@ const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void=> {
 }
 
     return(
-        <form onSubmit={handleSubmit}>        
+        <form onSubmit={handleKeyDown}>  
+              
         <input
             className="new-todo"
             value={inputTitleValue}
@@ -54,8 +53,8 @@ const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void=> {
             className="new-todo"
              name="eta"
             type='date'
-            value={inputDescriptionValue}            
-            onChange={(event)=>{setInputDescriptionValue(event.target.value)}}
+            value={inputCreatedDAte}            
+            onChange={(event)=>{setInputCreatedDate(event.target.value)}}
             onKeyDown={()=>{}}
             placeholder="Fecha estimada de finalización"
             autoFocus

@@ -27,13 +27,7 @@ export const Task: React.FC<Props> = ({id, title, description, createdDate, eta,
                     type="checkbox"
                     onChange={handleChangeCheckbock}
                 />
-            </td>
-            <td >{title}</td>
-            <td >{description}</td>
-            <td >{createdDate.toLocaleDateString()}</td>
-            <td >{eta.toLocaleDateString()}</td>
-            <td >{taskStatus}</td>
-            <td>
+         
                 <button
                     className="destroy"
                     onClick={() => {

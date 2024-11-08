@@ -13,15 +13,8 @@ interface Props{
 export const Tasks: React.FC<Props> = ({ tasks, onRemoveTask, onToggleCompleteTask})=>{
 
     return (
-        <table className="todo-list">
-            <tr>
-                <td className="">Id</td>
-                <td className="">Título</td>
-                <td className="">Descripción</td>
-                <td className="">Fecha de creación</td>
-                <td className="">Fecha estimada de finalización</td>
-                <td className="">Estado de la tarea</td>
-            </tr>
+        <ul className="todo-list">
+           
             {tasks.map(task=>(
                 <li key={task.id} className={`${task.completed? 'completed': ''}`}>
                     <Task 
@@ -38,6 +31,6 @@ export const Tasks: React.FC<Props> = ({ tasks, onRemoveTask, onToggleCompleteTa
                         />                    
                 </li>
             ))}
-        </table>   
+        </ul>   
     )
 }
